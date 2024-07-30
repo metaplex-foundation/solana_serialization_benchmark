@@ -1,6 +1,6 @@
-# Mpl Project Name
+# Solana Serialization Benchmark
 
-My project description
+Benchmarks for rust serialization frameworks, inspired by https://github.com/djkoloski/rust_serialization_benchmark.
 
 ## Building
 

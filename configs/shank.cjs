@@ -7,9 +7,9 @@ const programDir = path.join(__dirname, "..", "programs");
 
 generateIdl({
   generator: "shank",
-  programName: "mpl_project_name_program",
-  programId: "MyProgram1111111111111111111111111111111111",
+  programName: "solana_serialization_benchmark_program",
+  programId: "BENCHVr3SC7dVDMtKVpwctjFNPBMrqvXn9JVACJg3KEb",
   idlDir,
   binaryInstallDir,
-  programDir: path.join(programDir, "mpl-project-name"),
+  programDir: path.join(programDir, "solana-serialization-benchmark"),
 });

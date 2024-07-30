@@ -4,7 +4,7 @@ use solana_program::{
     rent::Rent, system_instruction, system_program, sysvar::Sysvar,
 };
 
-use crate::error::MplProjectNameError;
+use crate::error::SolanaSerializationBenchmarkError;
 use crate::instruction::accounts::CreateAccounts;
 use crate::instruction::{CreateArgs, MplProjectNameInstruction};
 use crate::state::{Key, MyAccount, MyData};
@@ -31,7 +31,7 @@ fn create<'a>(accounts: &'a [AccountInfo<'a>], args: CreateArgs) -> ProgramResul
 
     // Guards.
     if *ctx.accounts.system_program.key != system_program::id() {
-        return Err(MplProjectNameError::InvalidSystemProgram.into());
+        return Err(SolanaSerializationBenchmarkError::InvalidSystemProgram.into());
     }
 
     // Fetch the space and minimum lamports required for rent exemption.

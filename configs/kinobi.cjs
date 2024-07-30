@@ -6,12 +6,12 @@ const clientDir = path.join(__dirname, "..", "clients");
 const idlDir = path.join(__dirname, "..", "idls");
 
 // Instanciate Kinobi.
-const kinobi = k.createFromIdls([path.join(idlDir, "mpl_project_name_program.json")]);
+const kinobi = k.createFromIdls([path.join(idlDir, "solana_serialization_benchmark_program.json")]);
 
 // Update programs.
 kinobi.update(
   new k.updateProgramsVisitor({
-    mplProjectNameProgram: { name: "mplProjectName" },
+    solanaSerializationBenchmarkProgram: { name: "solanaSerializationBenchmark" },
   })
 );
 

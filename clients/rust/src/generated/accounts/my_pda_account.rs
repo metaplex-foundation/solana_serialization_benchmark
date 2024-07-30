@@ -25,7 +25,7 @@ impl MyPdaAccount {
     /// Values are positional and appear in the following order:
     ///
     ///   0. `MyPdaAccount::PREFIX`
-    ///   1. `crate::MPL_PROJECT_NAME_ID`
+    ///   1. `crate::SOLANA_SERIALIZATION_BENCHMARK_ID`
     ///   2. authority (`Pubkey`)
     ///   3. name (`String`)
     pub const PREFIX: &'static [u8] = "myPdaAccount".as_bytes();
@@ -38,12 +38,12 @@ impl MyPdaAccount {
         solana_program::pubkey::Pubkey::create_program_address(
             &[
                 "myPdaAccount".as_bytes(),
-                crate::MPL_PROJECT_NAME_ID.as_ref(),
+                crate::SOLANA_SERIALIZATION_BENCHMARK_ID.as_ref(),
                 authority.as_ref(),
                 name.to_string().as_ref(),
                 &[bump],
             ],
-            &crate::MPL_PROJECT_NAME_ID,
+            &crate::SOLANA_SERIALIZATION_BENCHMARK_ID,
         )
     }
 
@@ -51,11 +51,11 @@ impl MyPdaAccount {
         solana_program::pubkey::Pubkey::find_program_address(
             &[
                 "myPdaAccount".as_bytes(),
-                crate::MPL_PROJECT_NAME_ID.as_ref(),
+                crate::SOLANA_SERIALIZATION_BENCHMARK_ID.as_ref(),
                 authority.as_ref(),
                 name.to_string().as_ref(),
             ],
-            &crate::MPL_PROJECT_NAME_ID,
+            &crate::SOLANA_SERIALIZATION_BENCHMARK_ID,
         )
     }
 

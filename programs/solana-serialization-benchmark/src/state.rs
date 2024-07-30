@@ -6,7 +6,7 @@ use solana_program::msg;
 use solana_program::program_error::ProgramError;
 use solana_program::pubkey::Pubkey;
 
-use crate::error::MplProjectNameError;
+use crate::error::SolanaSerializationBenchmarkError;
 
 #[derive(Clone, BorshSerialize, BorshDeserialize, Debug)]
 pub enum Key {
@@ -30,14 +30,14 @@ impl MyAccount {
         let mut bytes: &[u8] = &(*account.data).borrow();
         MyAccount::deserialize(&mut bytes).map_err(|error| {
             msg!("Error: {}", error);
-            MplProjectNameError::DeserializationError.into()
+            SolanaSerializationBenchmarkError::DeserializationError.into()
         })
     }
 
     pub fn save(&self, account: &AccountInfo) -> ProgramResult {
         borsh::to_writer(&mut account.data.borrow_mut()[..], self).map_err(|error| {
             msg!("Error: {}", error);
-            MplProjectNameError::SerializationError.into()
+            SolanaSerializationBenchmarkError::SerializationError.into()
         })
     }
 }

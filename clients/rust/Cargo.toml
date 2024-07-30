@@ -1,16 +1,16 @@
 [package]
-name = "mpl-project-name"
-version = "0.1.0"
 edition = "2021"
-readme = "README.md"
 license-file = "../../LICENSE"
+name = "solana-serialization-benchmark"
+readme = "README.md"
+version = "0.1.0"
 
 [lib]
 crate-type = ["cdylib", "lib"]
 
 [features]
-test-sbf = []
 serde = ["dep:serde", "dep:serde_with"]
+test-sbf = []
 
 [dependencies]
 borsh = "^0.10"

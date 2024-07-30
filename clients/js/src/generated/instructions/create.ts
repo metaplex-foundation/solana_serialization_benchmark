@@ -78,7 +78,7 @@ export function create(
 ): TransactionBuilder {
   // Program ID.
   const programId = context.programs.getPublicKey(
-    'mplProjectName',
+    'solanaSerializationBenchmark',
     'MyProgram1111111111111111111111111111111111'
   );
 

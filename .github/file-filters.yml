@@ -13,7 +13,7 @@ program_common: &program_common
 
 mpl_project_name_program: &mpl_project_name_program
   - *program_common
-  - "programs/mpl-project-name/**"
+  - "programs/solana-serialization-benchmark/**"
 
 programs: &programs
   - *mpl_project_name_program

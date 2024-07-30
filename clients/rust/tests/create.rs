@@ -1,18 +1,22 @@
 #![cfg(feature = "test-sbf")]
 
 use borsh::BorshDeserialize;
-use mpl_project_name::{accounts::MyAccount, instructions::CreateBuilder};
 use solana_program_test::{tokio, ProgramTest};
 use solana_sdk::{
     signature::{Keypair, Signer},
     transaction::Transaction,
 };
+use solana_serialization_benchmark::{accounts::MyAccount, instructions::CreateBuilder};
 
 #[tokio::test]
 async fn create() {
-    let mut context = ProgramTest::new("mpl_project_name_program", mpl_project_name::ID, None)
-        .start_with_context()
-        .await;
+    let mut context = ProgramTest::new(
+        "solana_serialization_benchmark_program",
+        solana_serialization_benchmark::ID,
+        None,
+    )
+    .start_with_context()
+    .await;
 
     // Given a new keypair.
 
