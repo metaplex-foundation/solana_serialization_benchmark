@@ -79,7 +79,7 @@ export function create(
   // Program ID.
   const programId = context.programs.getPublicKey(
     'solanaSerializationBenchmark',
-    'MyProgram1111111111111111111111111111111111'
+    'BENCHVr3SC7dVDMtKVpwctjFNPBMrqvXn9JVACJg3KEb'
   );
 
   // Accounts.

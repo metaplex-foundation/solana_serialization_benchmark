@@ -127,7 +127,7 @@ export function getMyAccountGpaBuilder(
 ) {
   const programId = context.programs.getPublicKey(
     'solanaSerializationBenchmark',
-    'MyProgram1111111111111111111111111111111111'
+    'BENCHVr3SC7dVDMtKVpwctjFNPBMrqvXn9JVACJg3KEb'
   );
   return gpaBuilder(context, programId)
     .registerFields<{ key: KeyArgs; authority: PublicKey; data: MyDataArgs }>({

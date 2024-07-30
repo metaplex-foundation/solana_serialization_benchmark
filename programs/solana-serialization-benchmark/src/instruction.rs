@@ -3,7 +3,7 @@ use shank::{ShankContext, ShankInstruction};
 
 #[derive(BorshDeserialize, BorshSerialize, Clone, Debug, ShankContext, ShankInstruction)]
 #[rustfmt::skip]
-pub enum MplProjectNameInstruction {
+pub enum SolanaSerializationBenchmarkInstruction {
     /// Create My Account.
     /// A detailed description of the instruction.
     #[account(0, writable, signer, name="address", desc = "The address of the new account")]

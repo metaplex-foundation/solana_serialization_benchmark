@@ -6,7 +6,7 @@ use solana_program::{
 
 use crate::error::SolanaSerializationBenchmarkError;
 use crate::instruction::accounts::CreateAccounts;
-use crate::instruction::{CreateArgs, MplProjectNameInstruction};
+use crate::instruction::{CreateArgs, SolanaSerializationBenchmarkInstruction};
 use crate::state::{Key, MyAccount, MyData};
 
 pub fn process_instruction<'a>(
@@ -14,10 +14,10 @@ pub fn process_instruction<'a>(
     accounts: &'a [AccountInfo<'a>],
     instruction_data: &[u8],
 ) -> ProgramResult {
-    let instruction: MplProjectNameInstruction =
-        MplProjectNameInstruction::try_from_slice(instruction_data)?;
+    let instruction: SolanaSerializationBenchmarkInstruction =
+        SolanaSerializationBenchmarkInstruction::try_from_slice(instruction_data)?;
     match instruction {
-        MplProjectNameInstruction::Create(args) => {
+        SolanaSerializationBenchmarkInstruction::Create(args) => {
             msg!("Instruction: Create");
             create(accounts, args)
         }

@@ -11,12 +11,12 @@ program_common: &program_common
   - ".github/file-filters.yml"
   - ".github/.env"
 
-mpl_project_name_program: &mpl_project_name_program
+solana_serialization_benchmark_program: &solana_serialization_benchmark_program
   - *program_common
   - "programs/solana-serialization-benchmark/**"
 
 programs: &programs
-  - *mpl_project_name_program
+  - *solana_serialization_bench
 
 # Clients.
 

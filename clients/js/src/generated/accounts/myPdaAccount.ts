@@ -118,7 +118,7 @@ export function getMyPdaAccountGpaBuilder(
 ) {
   const programId = context.programs.getPublicKey(
     'solanaSerializationBenchmark',
-    'MyProgram1111111111111111111111111111111111'
+    'BENCHVr3SC7dVDMtKVpwctjFNPBMrqvXn9JVACJg3KEb'
   );
   return gpaBuilder(context, programId)
     .registerFields<{ key: KeyArgs; bump: number }>({
@@ -146,7 +146,7 @@ export function findMyPdaAccountPda(
 ): Pda {
   const programId = context.programs.getPublicKey(
     'solanaSerializationBenchmark',
-    'MyProgram1111111111111111111111111111111111'
+    'BENCHVr3SC7dVDMtKVpwctjFNPBMrqvXn9JVACJg3KEb'
   );
   return context.eddsa.findPda(programId, [
     string({ size: 'variable' }).serialize('myPdaAccount'),

@@ -1,7 +1,7 @@
 {
   "name": "@metaplex-foundation/solana-serialization-benchmark",
   "version": "0.1.0",
-  "description": "My project description",
+  "description": "Benchmarks for rust serialization frameworks, inspired by https://github.com/djkoloski/rust_serialization_benchmark",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "scripts": {

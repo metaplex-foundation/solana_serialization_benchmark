@@ -18,7 +18,7 @@ import {
 } from '../errors';
 
 export const SOLANA_SERIALIZATION_BENCHMARK_PROGRAM_ID =
-  'MyProgram1111111111111111111111111111111111' as PublicKey<'MyProgram1111111111111111111111111111111111'>;
+  'BENCHVr3SC7dVDMtKVpwctjFNPBMrqvXn9JVACJg3KEb' as PublicKey<'BENCHVr3SC7dVDMtKVpwctjFNPBMrqvXn9JVACJg3KEb'>;
 
 export function createSolanaSerializationBenchmarkProgram(): Program {
   return {

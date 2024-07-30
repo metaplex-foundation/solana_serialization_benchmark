@@ -11,8 +11,8 @@ A Umi-compatible JavaScript library for the project.
    ```
 2. Finally, register the library with your Umi instance like so.
    ```ts
-   import { mplProjectName } from '@metaplex-foundation/solana-serialization-benchmark';
-   umi.use(mplProjectName());
+   import { solanaSerializationBenchmark } from '@metaplex-foundation/solana-serialization-benchmark';
+   umi.use(solanaSerializationBenchmark());
    ```
 
 You can learn more about this library's API by reading its generated [TypeDoc documentation](https://solana-serialization-benchmark-js-docs.vercel.app).
