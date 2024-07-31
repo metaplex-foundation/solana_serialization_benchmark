@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Solana Serialization Benchmark</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .chart-container {
+            width: 45%;
+            margin: 10px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Solana Serialization Benchmark</h1>
+    <h2>Compute</h2>
+    <div>
+        <h3>Create</h3>
+        <div class="chart-container"><canvas id="createComputeChart"></canvas></div>
+        <h3>Read</h3>
+        <div class="chart-container"><canvas id="readComputeChart"></canvas></div>
+        <h3>Update</h3>
+        <div class="chart-container"><canvas id="updateComputeChart"></canvas></div>
+    </div>
+
+    <h2>Space</h2>
+    <div>
+        <h3>Create</h3>
+        <div class="chart-container"><canvas id="createSpaceChart"></canvas></div>
+        <h3>Read</h3>
+        <div class="chart-container"><canvas id="readSpaceChart"></canvas></div>
+        <h3>Update</h3>
+        <div class="chart-container"><canvas id="updateSpaceChart"></canvas></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        function createChart(id, title, data) {
+            console.log(data);
+            const ctx = document.getElementById(id);
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.filter(d => d.name.includes('Basic')).map(d => d.name.split(':')[3]),
+                    datasets: [{
+                        label: "Basic Types",
+                        data: data.filter(d => d.name.includes('Basic')).map(d => d.value),
+                        borderWidth: 1
+                    },
+                    {
+                        label: "Collection Types",
+                        data: data.filter(d => d.name.includes('Collection')).map(d => d.value),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        }
+                    },
+                    indexAxis: 'y',
+                }
+            });
+        }
+
+        function processData(type, operation, data) {
+
+        }
+
+        // Open output.json and read the results array.
+        fetch('/output.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+
+                // const ctx = document.getElementById('createComputeChart');
+
+                // let basicPoints = [];
+                // let collectionPoints = [];
+                // let labels = [];
+                // for (const point of data) {
+                //     const parts = point.name.split(':');
+                //     if (parts[0] === 'CU' && parts[1] === 'Create') {
+                //         if (parts[2] === 'Basic') {
+                //             basicPoints.push(point.value);
+                //         } else if (parts[2] === 'Collection') {
+                //             collectionPoints.push(point.value);
+                //         }
+                //         labels.push(parts[2]);
+                //     }
+                // }
+                // new Chart(ctx, {
+                //     type: 'bar',
+                //     data: {
+                //         labels,
+                //         datasets: [{
+                //             label: 'Compute Units',
+                //             data: basicPoints,
+                //             borderWidth: 1
+                //         },
+                //         {
+                //             label: 'Compute Units',
+                //             data: collectionPoints,
+                //             borderWidth: 1
+                //         }]
+                //     },
+                //     options: {
+                //         scales: {
+                //             y: {
+                //                 beginAtZero: true,
+                //             }
+                //         },
+                //         indexAxis: 'y',
+                //     }
+                // });
+
+                createChart('createComputeChart', 'Create', data.filter(d => d.name.includes('Compute:Create')));
+                createChart('readComputeChart', 'Read', data.filter(d => d.name.includes('Compute:Read')));
+                createChart('updateComputeChart', 'Update', data.filter(d => d.name.includes('Compute:Update')));
+
+                createChart('createSpaceChart', 'Create', data.filter(d => d.name.includes('Space:Create')));
+                createChart('readSpaceChart', 'Read', data.filter(d => d.name.includes('Space:Read')));
+                createChart('updateSpaceChart', 'Update', data.filter(d => d.name.includes('Space:Update')));
+            });
+    </script>
+</body>
+
+</html>

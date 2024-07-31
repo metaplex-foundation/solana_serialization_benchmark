@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Compute:Create:Basic:Borsh",
+    "unit": "Compute Units",
+    "value": 7968
+  },
+  {
+    "name": "Space:Create:Basic:Borsh",
+    "unit": "Bytes",
+    "value": 1275
+  },
+  {
+    "name": "Compute:Read:Basic:Borsh",
+    "unit": "Compute Units",
+    "value": 7968
+  },
+  {
+    "name": "Space:Read:Basic:Borsh",
+    "unit": "Bytes",
+    "value": 1275
+  },
+  {
+    "name": "Compute:Update:Basic:Borsh",
+    "unit": "Compute Units",
+    "value": 11123
+  },
+  {
+    "name": "Space:Update:Basic:Borsh",
+    "unit": "Bytes",
+    "value": 1275
+  },
+  {
+    "name": "Compute:Create:Collection:Borsh",
+    "unit": "Compute Units",
+    "value": 27080
+  },
+  {
+    "name": "Space:Create:Collection:Borsh",
+    "unit": "Bytes",
+    "value": 532
+  },
+  {
+    "name": "Compute:Read:Collection:Borsh",
+    "unit": "Compute Units",
+    "value": 27080
+  },
+  {
+    "name": "Space:Read:Collection:Borsh",
+    "unit": "Bytes",
+    "value": 532
+  },
+  {
+    "name": "Compute:Update:Collection:Borsh",
+    "unit": "Compute Units",
+    "value": 9633
+  },
+  {
+    "name": "Space:Update:Collection:Borsh",
+    "unit": "Bytes",
+    "value": 756
+  },
+  {
+    "name": "Compute:Create:Basic:None",
+    "unit": "Compute Units",
+    "value": 5386
+  },
+  {
+    "name": "Space:Create:Basic:None",
+    "unit": "Bytes",
+    "value": 0
+  },
+  {
+    "name": "Compute:Read:Basic:None",
+    "unit": "Compute Units",
+    "value": 5386
+  },
+  {
+    "name": "Space:Read:Basic:None",
+    "unit": "Bytes",
+    "value": 0
+  },
+  {
+    "name": "Compute:Update:Basic:None",
+    "unit": "Compute Units",
+    "value": 3115
+  },
+  {
+    "name": "Space:Update:Basic:None",
+    "unit": "Bytes",
+    "value": 0
+  },
+  {
+    "name": "Compute:Create:Collection:None",
+    "unit": "Compute Units",
+    "value": 26291
+  },
+  {
+    "name": "Space:Create:Collection:None",
+    "unit": "Bytes",
+    "value": 0
+  },
+  {
+    "name": "Compute:Read:Collection:None",
+    "unit": "Compute Units",
+    "value": 26291
+  },
+  {
+    "name": "Space:Read:Collection:None",
+    "unit": "Bytes",
+    "value": 0
+  },
+  {
+    "name": "Compute:Update:Collection:None",
+    "unit": "Compute Units",
+    "value": 3115
+  },
+  {
+    "name": "Space:Update:Collection:None",
+    "unit": "Bytes",
+    "value": 0
+  }
+]

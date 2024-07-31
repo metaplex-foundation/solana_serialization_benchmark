@@ -8,7 +8,7 @@
     "build": "rimraf dist && tsc -p tsconfig.json",
     "build:docs": "typedoc",
     "test": "ava",
-    "bench": "rm -f output.json && ava ./dist/bench/*.js --serial --no-worker-threads",
+    "bench": "rm -f ../../page/output.json && ava ./dist/bench/*.js --serial --no-worker-threads --timeout=10m",
     "lint": "eslint --ext js,ts,tsx src",
     "lint:fix": "eslint --fix --ext js,ts,tsx src",
     "format": "prettier --check src test",

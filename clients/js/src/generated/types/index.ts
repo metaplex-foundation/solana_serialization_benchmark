@@ -6,5 +6,8 @@
  * @see https://github.com/metaplex-foundation/kinobi
  */
 
-export * from './key';
-export * from './myData';
+export * from './basicTypes';
+export * from './collectionTypes';
+export * from './exampleEnum';
+export * from './exampleStruct';
+export * from './exampleVariant';

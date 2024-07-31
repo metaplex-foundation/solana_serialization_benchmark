@@ -3,7 +3,7 @@
   "name": "solana_serialization_benchmark_program",
   "instructions": [
     {
-      "name": "Create",
+      "name": "CreateBasicNone",
       "accounts": [
         {
           "name": "address",
@@ -11,14 +11,6 @@
           "isSigner": true,
           "docs": [
             "The address of the new account"
-          ]
-        },
-        {
-          "name": "authority",
-          "isMut": false,
-          "isSigner": false,
-          "docs": [
-            "The authority of the new account"
           ]
         },
         {
@@ -38,110 +30,605 @@
           ]
         }
       ],
-      "args": [
-        {
-          "name": "createArgs",
-          "type": {
-            "defined": "CreateArgs"
-          }
-        }
-      ],
+      "args": [],
       "discriminant": {
         "type": "u8",
         "value": 0
       }
-    }
-  ],
-  "accounts": [
+    },
     {
-      "name": "MyAccount",
-      "type": {
-        "kind": "struct",
-        "fields": [
-          {
-            "name": "key",
-            "type": {
-              "defined": "Key"
-            }
-          },
-          {
-            "name": "authority",
-            "type": "publicKey"
-          },
-          {
-            "name": "data",
-            "type": {
-              "defined": "MyData"
-            }
-          }
-        ]
+      "name": "ReadBasicNone",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 1
       }
     },
     {
-      "name": "MyPdaAccount",
-      "type": {
-        "kind": "struct",
-        "fields": [
-          {
-            "name": "key",
-            "type": {
-              "defined": "Key"
-            }
-          },
-          {
-            "name": "bump",
-            "type": "u8"
-          }
-        ]
+      "name": "UpdateBasicNone",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 2
+      }
+    },
+    {
+      "name": "CreateCollectionNone",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 3
+      }
+    },
+    {
+      "name": "ReadCollectionNone",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 4
+      }
+    },
+    {
+      "name": "UpdateCollectionNone",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 5
+      }
+    },
+    {
+      "name": "CreateBasicBorsh",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 6
+      }
+    },
+    {
+      "name": "ReadBasicBorsh",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 7
+      }
+    },
+    {
+      "name": "UpdateBasicBorsh",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 8
+      }
+    },
+    {
+      "name": "CreateCollectionBorsh",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 9
+      }
+    },
+    {
+      "name": "ReadCollectionBorsh",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 10
+      }
+    },
+    {
+      "name": "UpdateCollectionBorsh",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 11
       }
     }
   ],
   "types": [
     {
-      "name": "CreateArgs",
+      "name": "ExampleStruct",
       "type": {
         "kind": "struct",
         "fields": [
           {
-            "name": "arg1",
+            "name": "unsigned8",
+            "type": "u8"
+          },
+          {
+            "name": "unsigned16",
             "type": "u16"
           },
           {
-            "name": "arg2",
+            "name": "unsigned32",
             "type": "u32"
+          },
+          {
+            "name": "unsigned64",
+            "type": "u64"
+          },
+          {
+            "name": "publicKey",
+            "type": "publicKey"
           }
         ]
       }
     },
     {
-      "name": "MyData",
+      "name": "BasicTypes",
       "type": {
         "kind": "struct",
         "fields": [
           {
-            "name": "field1",
+            "name": "unsigned8",
+            "type": "u8"
+          },
+          {
+            "name": "unsigned16",
             "type": "u16"
           },
           {
-            "name": "field2",
+            "name": "unsigned32",
             "type": "u32"
+          },
+          {
+            "name": "unsigned64",
+            "type": "u64"
+          },
+          {
+            "name": "publicKey",
+            "type": "publicKey"
+          },
+          {
+            "name": "string",
+            "type": "string"
+          },
+          {
+            "name": "exampleStruct",
+            "type": {
+              "defined": "ExampleStruct"
+            }
+          },
+          {
+            "name": "exampleEnum",
+            "type": {
+              "defined": "ExampleEnum"
+            }
+          },
+          {
+            "name": "exampleVariant",
+            "type": {
+              "defined": "ExampleVariant"
+            }
+          },
+          {
+            "name": "array8",
+            "type": {
+              "array": [
+                "u8",
+                10
+              ]
+            }
+          },
+          {
+            "name": "array16",
+            "type": {
+              "array": [
+                "u16",
+                10
+              ]
+            }
+          },
+          {
+            "name": "array32",
+            "type": {
+              "array": [
+                "u32",
+                10
+              ]
+            }
+          },
+          {
+            "name": "array64",
+            "type": {
+              "array": [
+                "u64",
+                10
+              ]
+            }
+          },
+          {
+            "name": "arrayPublicKey",
+            "type": {
+              "array": [
+                "publicKey",
+                10
+              ]
+            }
+          },
+          {
+            "name": "arrayString",
+            "type": {
+              "array": [
+                "string",
+                10
+              ]
+            }
+          },
+          {
+            "name": "arrayExampleStruct",
+            "type": {
+              "array": [
+                {
+                  "defined": "ExampleStruct"
+                },
+                10
+              ]
+            }
+          },
+          {
+            "name": "arrayExampleEnum",
+            "type": {
+              "array": [
+                {
+                  "defined": "ExampleEnum"
+                },
+                10
+              ]
+            }
+          },
+          {
+            "name": "arrayExampleVariant",
+            "type": {
+              "array": [
+                {
+                  "defined": "ExampleVariant"
+                },
+                5
+              ]
+            }
           }
         ]
       }
     },
     {
-      "name": "Key",
+      "name": "CollectionTypes",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "vecPublicKey",
+            "type": {
+              "vec": "publicKey"
+            }
+          },
+          {
+            "name": "hsetPublicKey",
+            "type": {
+              "hashSet": "publicKey"
+            }
+          },
+          {
+            "name": "bsetPublicKey",
+            "type": {
+              "bTreeSet": "publicKey"
+            }
+          },
+          {
+            "name": "hmapPublicKey",
+            "type": {
+              "hashMap": [
+                "publicKey",
+                "publicKey"
+              ]
+            }
+          },
+          {
+            "name": "bmapPublicKey",
+            "type": {
+              "bTreeMap": [
+                "publicKey",
+                "publicKey"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExampleEnum",
       "type": {
         "kind": "enum",
         "variants": [
           {
-            "name": "Uninitialized"
+            "name": "Zero"
           },
           {
-            "name": "MyAccount"
+            "name": "One"
           },
           {
-            "name": "MyPdaAccount"
+            "name": "Two"
+          },
+          {
+            "name": "Three"
+          },
+          {
+            "name": "Four"
+          },
+          {
+            "name": "Five"
+          },
+          {
+            "name": "Six"
+          },
+          {
+            "name": "Seven"
+          },
+          {
+            "name": "Eight"
+          },
+          {
+            "name": "Nine"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExampleVariant",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Zero",
+            "fields": [
+              "u8"
+            ]
+          },
+          {
+            "name": "One",
+            "fields": [
+              "u16"
+            ]
+          },
+          {
+            "name": "Two",
+            "fields": [
+              "u32"
+            ]
+          },
+          {
+            "name": "Three",
+            "fields": [
+              "u64"
+            ]
+          },
+          {
+            "name": "Four",
+            "fields": [
+              "publicKey"
+            ]
           }
         ]
       }
