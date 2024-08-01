@@ -67,4 +67,8 @@ pub enum SolanaSerializationBenchmarkInstruction {
     #[account(1, writable, signer, name="payer", desc = "The account paying for the storage fees")]
     #[account(2, name="system_program", desc = "The system program")]
     UpdateCollectionBorsh,
+
+    // For new Serialization libaries, copy and paste the CreateBasicNone, ReadBasicNone, UpdateBasicNone,
+    // CreateCollectionNone, ReadCollectionNone, UpdateCollectionNone instructions here. Replace the "None"
+    // with the name of the serialization library.
 }

@@ -26,5 +26,5 @@
     "useUnknownInCatchVariables": false
   },
   "include": ["src", "test", "bench"],
-  "exclude": ["node_modules", "dist", "build", "lib"]
+  "exclude": ["node_modules", "dist", "build", "lib", "bench/_template.ts"]
 }

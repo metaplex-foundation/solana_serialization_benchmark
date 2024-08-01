@@ -1,4 +1,6 @@
-use borsh::{BorshDeserialize, BorshSerialize};
+/// For new Serialization libraries, copy and paste the processor.template directory. Rename the directory
+/// to the name of the serialization library + _processor. Replace the "SERDESLIB" with the name of the
+/// serialization library. Change the serialization and deserialization code as needed.
 use solana_program::{
     account_info::AccountInfo, entrypoint::ProgramResult, program_memory::sol_memcpy, rent::Rent,
     sysvar::Sysvar,
@@ -6,18 +8,20 @@ use solana_program::{
 
 use crate::{
     instruction::accounts::{
-        CreateBasicBorshAccounts, CreateCollectionBorshAccounts, ReadBasicBorshAccounts,
-        ReadCollectionBorshAccounts, UpdateBasicBorshAccounts, UpdateCollectionBorshAccounts,
+        CreateBasicSERDESLIBAccounts, CreateCollectionSERDESLIBAccounts,
+        ReadBasicSERDESLIBAccounts, ReadCollectionSERDESLIBAccounts, UpdateBasicSERDESLIBAccounts,
+        UpdateCollectionSERDESLIBAccounts,
     },
-    state::borsh_state::{BasicTypes, CollectionTypes},
+    state::SERDESLIB_state::{BasicTypes, CollectionTypes},
 };
 
 pub(crate) fn create_basic<'a>(accounts: &'a [AccountInfo<'a>]) -> ProgramResult {
     // Accounts.
-    let ctx = CreateBasicBorshAccounts::context(accounts)?;
+    let ctx = CreateBasicSERDESLIBAccounts::context(accounts)?;
 
     let account = BasicTypes::default();
-    let account_data = account.try_to_vec()?;
+    // Serialize the the types to the account data.
+    // let account_data = account.try_to_vec()?;
 
     // CPI to the System Program.
     solana_program::program::invoke(
@@ -46,20 +50,23 @@ pub(crate) fn create_basic<'a>(accounts: &'a [AccountInfo<'a>]) -> ProgramResult
 
 pub(crate) fn read_basic<'a>(accounts: &'a [AccountInfo<'a>]) -> ProgramResult {
     // Accounts.
-    let ctx = ReadBasicBorshAccounts::context(accounts)?;
+    let ctx = ReadBasicSERDESLIBAccounts::context(accounts)?;
 
-    let _account = BasicTypes::try_from_slice(&ctx.accounts.address.try_borrow_data()?)?;
+    // Deserialize the account data to the types.
+    // let _account = BasicTypes::try_from_slice(&ctx.accounts.address.try_borrow_data()?)?;
 
     Ok(())
 }
 
 pub(crate) fn update_basic<'a>(accounts: &'a [AccountInfo<'a>]) -> ProgramResult {
     // Accounts.
-    let ctx = UpdateBasicBorshAccounts::context(accounts)?;
+    let ctx = UpdateBasicSERDESLIBAccounts::context(accounts)?;
 
-    let mut account = BasicTypes::try_from_slice(&ctx.accounts.address.try_borrow_data()?)?;
+    // Deserialize the account data to the types.
+    // let mut account = BasicTypes::try_from_slice(&ctx.accounts.address.try_borrow_data()?)?;
     account.mutate();
-    let account_data = account.try_to_vec()?;
+    // Serialize the types back to the account data.
+    // let account_data = account.try_to_vec()?;
 
     // Resize the account to fit any changes in data size.
     let new_size = account_data.len();
@@ -88,10 +95,11 @@ pub(crate) fn update_basic<'a>(accounts: &'a [AccountInfo<'a>]) -> ProgramResult
 
 pub(crate) fn create_collection<'a>(accounts: &'a [AccountInfo<'a>]) -> ProgramResult {
     // Accounts.
-    let ctx = CreateCollectionBorshAccounts::context(accounts)?;
+    let ctx = CreateCollectionSERDESLIBAccounts::context(accounts)?;
 
     let account = CollectionTypes::default();
-    let account_data = account.try_to_vec()?;
+    // Serialize the the types to the account data.
+    // let account_data = account.try_to_vec()?;
 
     // CPI to the System Program.
     solana_program::program::invoke(
@@ -120,20 +128,23 @@ pub(crate) fn create_collection<'a>(accounts: &'a [AccountInfo<'a>]) -> ProgramR
 
 pub(crate) fn read_collection<'a>(accounts: &'a [AccountInfo<'a>]) -> ProgramResult {
     // Accounts.
-    let ctx = ReadCollectionBorshAccounts::context(accounts)?;
+    let ctx = ReadCollectionSERDESLIBAccounts::context(accounts)?;
 
-    let _account = CollectionTypes::try_from_slice(&ctx.accounts.address.try_borrow_data()?)?;
+    // Deserialize the account data to the types.
+    // let _account = CollectionTypes::try_from_slice(&ctx.accounts.address.try_borrow_data()?)?;
 
     Ok(())
 }
 
 pub(crate) fn update_collection<'a>(accounts: &'a [AccountInfo<'a>]) -> ProgramResult {
     // Accounts.
-    let ctx = UpdateCollectionBorshAccounts::context(accounts)?;
+    let ctx = UpdateCollectionSERDESLIBAccounts::context(accounts)?;
 
-    let mut account = CollectionTypes::try_from_slice(&ctx.accounts.address.try_borrow_data()?)?;
+    // Deserialize the account data to the types.
+    // let mut account = CollectionTypes::try_from_slice(&ctx.accounts.address.try_borrow_data()?)?;
     account.mutate();
-    let account_data = account.try_to_vec()?;
+    // Serialize the types back to the account data.
+    // let account_data = account.try_to_vec()?;
 
     // Resize the account to fit any changes in data size.
     let new_size = account_data.len();

@@ -1,17 +1,20 @@
+// For new Serialization libraries, copy and paste this _template File. Rename the file
+// to the name of the serialization library. Replace the "SERDESLIB" with the name of the
+// serialization library.
 import { generateSigner } from "@metaplex-foundation/umi";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import test from "ava";
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { createBasicNone, createCollectionNone, updateBasicNone, updateCollectionNone } from '../src';
+import { createBasicSERDESLIB, createCollectionSERDESLIB, updateBasicSERDESLIB, updateCollectionSERDESLIB } from '../src';
 import { createUmi } from "./_setup";
 
-test('Create:Basic:None', async (t) => {
+test('Create:Basic:SERDESLIB', async (t) => {
     // Given an Umi instance and a new signer.
     const umi = await createUmi();
     const address = generateSigner(umi);
 
     // When we create a new account.
-    const tx = await createBasicNone(umi, { address }).sendAndConfirm(umi);
+    const tx = await createBasicSERDESLIB(umi, { address }).sendAndConfirm(umi);
 
     const compute = Number((await umi.rpc.getTransaction(tx.signature))?.meta.computeUnitsConsumed);
     const account = await umi.rpc.getAccount(address.publicKey);
@@ -44,13 +47,13 @@ test('Create:Basic:None', async (t) => {
     t.pass();
 });
 
-test('Read:Basic:None', async (t) => {
+test('Read:Basic:SERDESLIB', async (t) => {
     // Given an Umi instance and a new signer.
     const umi = await createUmi();
     const address = generateSigner(umi);
 
     // When we create a new account.
-    const tx = await createBasicNone(umi, { address }).sendAndConfirm(umi);
+    const tx = await createBasicSERDESLIB(umi, { address }).sendAndConfirm(umi);
 
     // Then an account was created with the correct data.
     const compute = Number((await umi.rpc.getTransaction(tx.signature))?.meta.computeUnitsConsumed);
@@ -84,14 +87,14 @@ test('Read:Basic:None', async (t) => {
     t.pass();
 });
 
-test('Update:Basic:None', async (t) => {
+test('Update:Basic:SERDESLIB', async (t) => {
     // Given an Umi instance and a new signer.
     const umi = await createUmi();
     const address = generateSigner(umi);
 
     // When we create a new account.
-    await createBasicNone(umi, { address }).sendAndConfirm(umi);
-    const tx = await updateBasicNone(umi, { address: address.publicKey }).sendAndConfirm(umi);
+    await createBasicSERDESLIB(umi, { address }).sendAndConfirm(umi);
+    const tx = await updateBasicSERDESLIB(umi, { address: address.publicKey }).sendAndConfirm(umi);
 
     const compute = Number((await umi.rpc.getTransaction(tx.signature))?.meta.computeUnitsConsumed);
     const account = await umi.rpc.getAccount(address.publicKey);
@@ -124,13 +127,13 @@ test('Update:Basic:None', async (t) => {
     t.pass();
 });
 
-test('Create:Collection:None', async (t) => {
+test('Create:Collection:SERDESLIB', async (t) => {
     // Given an Umi instance and a new signer.
     const umi = await createUmi();
     const address = generateSigner(umi);
 
     // When we create a new account.
-    const tx = await createCollectionNone(umi, { address }).sendAndConfirm(umi);
+    const tx = await createCollectionSERDESLIB(umi, { address }).sendAndConfirm(umi);
 
     const compute = Number((await umi.rpc.getTransaction(tx.signature))?.meta.computeUnitsConsumed);
     const account = await umi.rpc.getAccount(address.publicKey);
@@ -163,13 +166,13 @@ test('Create:Collection:None', async (t) => {
     t.pass();
 });
 
-test('Read:Collection:None', async (t) => {
+test('Read:Collection:SERDESLIB', async (t) => {
     // Given an Umi instance and a new signer.
     const umi = await createUmi();
     const address = generateSigner(umi);
 
     // When we create a new account.
-    const tx = await createCollectionNone(umi, { address }).sendAndConfirm(umi);
+    const tx = await createCollectionSERDESLIB(umi, { address }).sendAndConfirm(umi);
 
     // Then an account was created with the correct data.
     const compute = Number((await umi.rpc.getTransaction(tx.signature))?.meta.computeUnitsConsumed);
@@ -203,14 +206,14 @@ test('Read:Collection:None', async (t) => {
     t.pass();
 });
 
-test('Update:Collection:None', async (t) => {
+test('Update:Collection:SERDESLIB', async (t) => {
     // Given an Umi instance and a new signer.
     const umi = await createUmi();
     const address = generateSigner(umi);
 
     // When we create a new account.
-    await createCollectionNone(umi, { address }).sendAndConfirm(umi);
-    const tx = await updateCollectionNone(umi, { address: address.publicKey }).sendAndConfirm(umi);
+    await createCollectionSERDESLIB(umi, { address }).sendAndConfirm(umi);
+    const tx = await updateCollectionSERDESLIB(umi, { address: address.publicKey }).sendAndConfirm(umi);
 
     const compute = Number((await umi.rpc.getTransaction(tx.signature))?.meta.computeUnitsConsumed);
     const account = await umi.rpc.getAccount(address.publicKey);

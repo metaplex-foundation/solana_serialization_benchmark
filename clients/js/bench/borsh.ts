@@ -31,15 +31,15 @@ test('Create:Basic:Borsh', async (t) => {
 
     // Read the results array from output.json
     let output = [];
-    if (existsSync("../../page/output.json")) {
-        output = JSON.parse(readFileSync("../../page/output.json", 'utf-8'));
+    if (existsSync("../../docs/output.json")) {
+        output = JSON.parse(readFileSync("../../docs/output.json", 'utf-8'));
     }
 
     // Push the result to the array
     output.push(cuResult);
     output.push(spaceResult);
     // Write the array to output.json
-    writeFileSync("../../page/output.json", JSON.stringify(output, null, 2));
+    writeFileSync("../../docs/output.json", JSON.stringify(output, null, 2));
 
     t.pass();
 });
@@ -71,15 +71,15 @@ test('Read:Basic:Borsh', async (t) => {
 
     // Read the results array from output.json
     let output = [];
-    if (existsSync("../../page/output.json")) {
-        output = JSON.parse(readFileSync("../../page/output.json", 'utf-8'));
+    if (existsSync("../../docs/output.json")) {
+        output = JSON.parse(readFileSync("../../docs/output.json", 'utf-8'));
     }
 
     // Push the result to the array
     output.push(cuResult);
     output.push(spaceResult);
     // Write the array to output.json
-    writeFileSync("../../page/output.json", JSON.stringify(output, null, 2));
+    writeFileSync("../../docs/output.json", JSON.stringify(output, null, 2));
 
     t.pass();
 });
@@ -91,7 +91,7 @@ test('Update:Basic:Borsh', async (t) => {
 
     // When we create a new account.
     await createBasicBorsh(umi, { address }).sendAndConfirm(umi, { confirm: { commitment: 'finalized' } });
-    const tx = await updateBasicBorsh(umi, { address: address.publicKey }).sendAndConfirm(umi);
+    const tx = await updateBasicBorsh(umi, { address: address.publicKey }).sendAndConfirm(umi, { send: { skipPreflight: true } });
 
     const compute = Number((await umi.rpc.getTransaction(tx.signature))?.meta.computeUnitsConsumed);
     const account = await umi.rpc.getAccount(address.publicKey);
@@ -111,15 +111,15 @@ test('Update:Basic:Borsh', async (t) => {
 
     // Read the results array from output.json
     let output = [];
-    if (existsSync("../../page/output.json")) {
-        output = JSON.parse(readFileSync("../../page/output.json", 'utf-8'));
+    if (existsSync("../../docs/output.json")) {
+        output = JSON.parse(readFileSync("../../docs/output.json", 'utf-8'));
     }
 
     // Push the result to the array
     output.push(cuResult);
     output.push(spaceResult);
     // Write the array to output.json
-    writeFileSync("../../page/output.json", JSON.stringify(output, null, 2));
+    writeFileSync("../../docs/output.json", JSON.stringify(output, null, 2));
 
     t.pass();
 });
@@ -150,15 +150,15 @@ test('Create:Collection:Borsh', async (t) => {
 
     // Read the results array from output.json
     let output = [];
-    if (existsSync("../../page/output.json")) {
-        output = JSON.parse(readFileSync("../../page/output.json", 'utf-8'));
+    if (existsSync("../../docs/output.json")) {
+        output = JSON.parse(readFileSync("../../docs/output.json", 'utf-8'));
     }
 
     // Push the result to the array
     output.push(cuResult);
     output.push(spaceResult);
     // Write the array to output.json
-    writeFileSync("../../page/output.json", JSON.stringify(output, null, 2));
+    writeFileSync("../../docs/output.json", JSON.stringify(output, null, 2));
 
     t.pass();
 });
@@ -190,15 +190,15 @@ test('Read:Collection:Borsh', async (t) => {
 
     // Read the results array from output.json
     let output = [];
-    if (existsSync("../../page/output.json")) {
-        output = JSON.parse(readFileSync("../../page/output.json", 'utf-8'));
+    if (existsSync("../../docs/output.json")) {
+        output = JSON.parse(readFileSync("../../docs/output.json", 'utf-8'));
     }
 
     // Push the result to the array
     output.push(cuResult);
     output.push(spaceResult);
     // Write the array to output.json
-    writeFileSync("../../page/output.json", JSON.stringify(output, null, 2));
+    writeFileSync("../../docs/output.json", JSON.stringify(output, null, 2));
 
     t.pass();
 });
@@ -230,15 +230,15 @@ test('Update:Collection:Borsh', async (t) => {
 
     // Read the results array from output.json
     let output = [];
-    if (existsSync("../../page/output.json")) {
-        output = JSON.parse(readFileSync("../../page/output.json", 'utf-8'));
+    if (existsSync("../../docs/output.json")) {
+        output = JSON.parse(readFileSync("../../docs/output.json", 'utf-8'));
     }
 
     // Push the result to the array
     output.push(cuResult);
     output.push(spaceResult);
     // Write the array to output.json
-    writeFileSync("../../page/output.json", JSON.stringify(output, null, 2));
+    writeFileSync("../../docs/output.json", JSON.stringify(output, null, 2));
 
     t.pass();
 });

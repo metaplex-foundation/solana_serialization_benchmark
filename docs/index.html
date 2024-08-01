@@ -3,6 +3,22 @@
 
 <head>
     <meta charset="utf-8">
+    <!-- Open Graph Protocol Metadata -->
+    <meta property="og:title" content="Solana Serialization Benchmark">
+    <meta property="og:description"
+        content="Benchmarks for rust serialization frameworks, inspired by https://github.com/djkoloski/rust_serialization_benchmark.">
+    <meta property="og:image"
+        content="https://metaplex-foundation.github.io/solana_serialization_benchmark/og-image.png">
+    <meta property="og:url" content="https://metaplex-foundation.github.io/solana_serialization_benchmark/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Solana Serialization Benchmark">
+    <meta name="twitter:description"
+        content="Benchmarks for rust serialization frameworks, inspired by https://github.com/djkoloski/rust_serialization_benchmark.">
+    <meta name="twitter:image"
+        content="https://metaplex-foundation.github.io/solana_serialization_benchmark/og-image.png">
     <title>Solana Serialization Benchmark</title>
     <style>
         body {
@@ -31,6 +47,9 @@
 
 <body>
     <h1>Solana Serialization Benchmark</h1>
+    <h3> View the source or contribute new serialization benchmarks at <a
+            href="https://github.com/metaplex-foundation/solana_serialization_benchmark">https://github.com/metaplex-foundation/solana_serialization_benchmark</a>
+    </h3>
     <h2>Compute</h2>
     <div>
         <h3>Create</h3>
@@ -73,11 +92,6 @@
                     }]
                 },
                 options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                        }
-                    },
                     indexAxis: 'y',
                 }
             });

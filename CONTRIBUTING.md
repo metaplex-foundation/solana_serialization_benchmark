@@ -16,7 +16,6 @@ You will then have access to the following commands.
 - `pnpm programs:test` - Test all programs.
 - `pnpm programs:debug` - Test all programs with logs enabled.
 - `pnpm programs:clean` - Clean all built and fetched programs.
-- `pnpm clients:rust:test` - Run the Rust client tests.
 - `pnpm clients:js:test` - Run the JS client tests.
 - `pnpm generate` - Shortcut for `pnpm generate:idls && pnpm generate:clients`.
 - `pnpm generate:idls` - Generate IDLs for all programs, as configured in the `configs/shank.cjs` file.
@@ -31,7 +30,6 @@ You will then have access to the following commands.
 Each client has its own README with instructions on how to get started. You can find them in the `clients` folder.
 
 - [JavaScript client](./clients/js/README.md)
-- [Rust client](./clients/rust/README.md)
 
 In order to generate the clients, run the following command.
 
@@ -41,10 +39,34 @@ pnpm generate
 
 You will need to run `pnpm generate` to re-generate the clients when something changes in the program(s).
 
-## Setting up CI/CD using GitHub actions
+## Adding a new serialization library and benchmark
 
-Most of the CI/CD should already be set up for you and the `.github/.env` file can be used to tweak the variables of the workflows.
+Take the following steps to add a new serialization library and benchmark to the project.
 
-However, the "Publish JS Client" workflow — configured in `.github/workflows/publish-js-client.yml` — requires a few more steps to work. See the [CONTRIBUTING.md file of the JavaScript client](./clients/js/CONTRIBUTING.md#setting-up-github-actions) for more information.
+### 1. Add the new serialization library to the `Cargo.toml` file
 
-Similarly, the "Publish Rust Client" workflow — configured in `.github/workflows/publish-rust-client.yml` — requires a few more steps to work. See the [CONTRIBUTING.md file of the Rust client](./clients/rust/CONTRIBUTING.md#setting-up-github-actions) for more information.
+Add the new serialization library to the `Cargo.toml` file in the `programs/solana-serialization-benchmark` folder.
+
+### 2. Create a new state file
+
+Create a new state file in the `programs/solana-serialization-benchmark/src/state` folder by copying the `state.template.rs` file and renaming it to the name of the serialization library + `_state.rs`. Add the required derive traits or implementations to the new file on the BasicTypes and CollectionTypes structs.
+
+### 3. Add new instructions
+
+Add new instructions to the `programs/solana-serialization-benchmark/src/instruction.rs` file by copying the `CreateBasicNone`, `ReadBasicNone`, `UpdateBasicNone`, `CreateCollectionNone`, `ReadCollectionNone`, `UpdateCollectionNone` instructions and renaming them to the name of the serialization library + `CreateBasicSERDESLIB`, `ReadBasicSERDESLIB`, `UpdateBasicSERDESLIB`, `CreateCollectionSERDESLIB`, `ReadCollectionSERDESLIB`, `UpdateCollectionSERDESLIB`.
+
+### 4. Add new processors
+
+Add new processors to the `programs/solana-serialization-benchmark/src/processor` folder by copying the `processor.template` folder and renaming it to the name of the serialization library + `_processor`. Modify the `processor.template/mod.rs` file processors to serialize and deserialize the account data as is appropriate for the new serialization library.
+
+### 5. Add the benchmark tests
+
+Add the new serialization library to the `clients/js/bench` folder by copying the `_template.ts` file and renaming it to the name of the serialization library + `.ts`. Replace the "SERDESLIB" with the name of the serialization library. This should match up with the new instruction names in the `clients/js/src/generated/instructions` folder.
+
+### 6. Run the benchmarks
+
+Run the benchmarks by running `pnpm bench` in the `clients/js` folder. This will run the benchmarks for all the serialization libraries and output the results to the `docs/output.json` file.
+
+### 7. Open a PR
+
+Open a PR with the new serialization library and benchmark changes. Once the PR is merged the results will be published to https://metaplex-foundation.github.io/solana_serialization_benchmark/.
