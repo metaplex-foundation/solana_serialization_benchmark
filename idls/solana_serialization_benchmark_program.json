@@ -517,6 +517,178 @@
         "type": "u8",
         "value": 17
       }
+    },
+    {
+      "name": "CreateBasicRkyv",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 18
+      }
+    },
+    {
+      "name": "ReadBasicRkyv",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 19
+      }
+    },
+    {
+      "name": "UpdateBasicRkyv",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 20
+      }
+    },
+    {
+      "name": "CreateCollectionRkyv",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 21
+      }
+    },
+    {
+      "name": "ReadCollectionRkyv",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 22
+      }
+    },
+    {
+      "name": "UpdateCollectionRkyv",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 23
+      }
     }
   ],
   "types": [
