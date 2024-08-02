@@ -1,8 +1,68 @@
 [
   {
+    "name": "Compute:Create:Basic:Bincode",
+    "unit": "Compute Units",
+    "value": 15980
+  },
+  {
+    "name": "Space:Create:Basic:Bincode",
+    "unit": "Bytes",
+    "value": 1370
+  },
+  {
+    "name": "Compute:Read:Basic:Bincode",
+    "unit": "Compute Units",
+    "value": 15980
+  },
+  {
+    "name": "Space:Read:Basic:Bincode",
+    "unit": "Bytes",
+    "value": 1370
+  },
+  {
+    "name": "Compute:Update:Basic:Bincode",
+    "unit": "Compute Units",
+    "value": 32757
+  },
+  {
+    "name": "Space:Update:Basic:Bincode",
+    "unit": "Bytes",
+    "value": 1388
+  },
+  {
+    "name": "Compute:Create:Collection:Bincode",
+    "unit": "Compute Units",
+    "value": 28049
+  },
+  {
+    "name": "Space:Create:Collection:Bincode",
+    "unit": "Bytes",
+    "value": 552
+  },
+  {
+    "name": "Compute:Read:Collection:Bincode",
+    "unit": "Compute Units",
+    "value": 28049
+  },
+  {
+    "name": "Space:Read:Collection:Bincode",
+    "unit": "Bytes",
+    "value": 552
+  },
+  {
+    "name": "Compute:Update:Collection:Bincode",
+    "unit": "Compute Units",
+    "value": 23101
+  },
+  {
+    "name": "Space:Update:Collection:Bincode",
+    "unit": "Bytes",
+    "value": 776
+  },
+  {
     "name": "Compute:Create:Basic:Borsh",
     "unit": "Compute Units",
-    "value": 7968
+    "value": 7341
   },
   {
     "name": "Space:Create:Basic:Borsh",
@@ -12,7 +72,7 @@
   {
     "name": "Compute:Read:Basic:Borsh",
     "unit": "Compute Units",
-    "value": 7968
+    "value": 7341
   },
   {
     "name": "Space:Read:Basic:Borsh",
@@ -22,17 +82,17 @@
   {
     "name": "Compute:Update:Basic:Borsh",
     "unit": "Compute Units",
-    "value": 11020
+    "value": 23136
   },
   {
     "name": "Space:Update:Basic:Borsh",
     "unit": "Bytes",
-    "value": 1275
+    "value": 1305
   },
   {
     "name": "Compute:Create:Collection:Borsh",
     "unit": "Compute Units",
-    "value": 27080
+    "value": 21725
   },
   {
     "name": "Space:Create:Collection:Borsh",
@@ -42,7 +102,7 @@
   {
     "name": "Compute:Read:Collection:Borsh",
     "unit": "Compute Units",
-    "value": 27080
+    "value": 21725
   },
   {
     "name": "Space:Read:Collection:Borsh",
@@ -52,7 +112,7 @@
   {
     "name": "Compute:Update:Collection:Borsh",
     "unit": "Compute Units",
-    "value": 9633
+    "value": 13225
   },
   {
     "name": "Space:Update:Collection:Borsh",
@@ -62,7 +122,7 @@
   {
     "name": "Compute:Create:Basic:None",
     "unit": "Compute Units",
-    "value": 5386
+    "value": 4777
   },
   {
     "name": "Space:Create:Basic:None",
@@ -72,7 +132,7 @@
   {
     "name": "Compute:Read:Basic:None",
     "unit": "Compute Units",
-    "value": 5386
+    "value": 4777
   },
   {
     "name": "Space:Read:Basic:None",
@@ -82,7 +142,7 @@
   {
     "name": "Compute:Update:Basic:None",
     "unit": "Compute Units",
-    "value": 3115
+    "value": 2864
   },
   {
     "name": "Space:Update:Basic:None",
@@ -92,7 +152,7 @@
   {
     "name": "Compute:Create:Collection:None",
     "unit": "Compute Units",
-    "value": 26291
+    "value": 21008
   },
   {
     "name": "Space:Create:Collection:None",
@@ -102,7 +162,7 @@
   {
     "name": "Compute:Read:Collection:None",
     "unit": "Compute Units",
-    "value": 26291
+    "value": 21008
   },
   {
     "name": "Space:Read:Collection:None",
@@ -112,7 +172,7 @@
   {
     "name": "Compute:Update:Collection:None",
     "unit": "Compute Units",
-    "value": 3115
+    "value": 2864
   },
   {
     "name": "Space:Update:Collection:None",

@@ -345,6 +345,178 @@
         "type": "u8",
         "value": 11
       }
+    },
+    {
+      "name": "CreateBasicBincode",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 12
+      }
+    },
+    {
+      "name": "ReadBasicBincode",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 13
+      }
+    },
+    {
+      "name": "UpdateBasicBincode",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 14
+      }
+    },
+    {
+      "name": "CreateCollectionBincode",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 15
+      }
+    },
+    {
+      "name": "ReadCollectionBincode",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 16
+      }
+    },
+    {
+      "name": "UpdateCollectionBincode",
+      "accounts": [
+        {
+          "name": "address",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "The address of the new account"
+          ]
+        },
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true,
+          "docs": [
+            "The account paying for the storage fees"
+          ]
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "docs": [
+            "The system program"
+          ]
+        }
+      ],
+      "args": [],
+      "discriminant": {
+        "type": "u8",
+        "value": 17
+      }
     }
   ],
   "types": [

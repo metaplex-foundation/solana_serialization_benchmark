@@ -1,3 +1,4 @@
+pub mod bincode_processor;
 pub mod borsh_processor;
 pub mod none_processor;
 
@@ -49,6 +50,24 @@ pub fn process_instruction<'a>(
         }
         SolanaSerializationBenchmarkInstruction::UpdateCollectionBorsh => {
             borsh_processor::update_collection(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::CreateBasicBincode => {
+            bincode_processor::create_basic(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::ReadBasicBincode => {
+            bincode_processor::read_basic(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::UpdateBasicBincode => {
+            bincode_processor::update_basic(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::CreateCollectionBincode => {
+            bincode_processor::create_collection(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::ReadCollectionBincode => {
+            bincode_processor::read_collection(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::UpdateCollectionBincode => {
+            bincode_processor::update_collection(accounts)
         }
     }
 }

@@ -1,12 +1,9 @@
-/// For new Serialization libaries, copy and paste the state.template file. Rename the file
-/// to the name of the serialization library + _state. Add any necessary imports to the top
-/// of the file and any derives or trait implementations required to the BasicTypes and
-/// CollectionTypes structs.
+use serde::{Deserialize, Serialize};
 use solana_program::pubkey::Pubkey;
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet};
 
 #[repr(C)]
-#[derive(Clone, Debug, Copy)]
+#[derive(Clone, Debug, Copy, Serialize, Deserialize)]
 pub struct ExampleStruct {
     pub unsigned8: u8,
     pub unsigned16: u16,
@@ -28,7 +25,7 @@ impl Default for ExampleStruct {
 }
 
 #[repr(C)]
-#[derive(Clone, Debug, Copy)]
+#[derive(Clone, Debug, Copy, Serialize, Deserialize)]
 pub enum ExampleEnum {
     Zero,
     One,
@@ -49,7 +46,7 @@ impl Default for ExampleEnum {
 }
 
 #[repr(C)]
-#[derive(Clone, Debug, Copy)]
+#[derive(Clone, Debug, Copy, Serialize, Deserialize)]
 pub enum ExampleVariant {
     Zero(u8),
     One(u16),
@@ -65,7 +62,7 @@ impl Default for ExampleVariant {
 }
 
 #[repr(C)]
-#[derive(Clone, Debug)]
+#[derive(Clone, Serialize, Deserialize, Debug)]
 pub struct BasicTypes {
     pub unsigned8: u8,
     pub unsigned16: u16,
@@ -163,7 +160,7 @@ impl BasicTypes {
 }
 
 #[repr(C)]
-#[derive(Clone, Debug)]
+#[derive(Clone, Serialize, Deserialize, Debug)]
 pub struct CollectionTypes {
     pub vec_public_key: Vec<Pubkey>,
     pub hset_public_key: HashSet<Pubkey>,
