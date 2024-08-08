@@ -1,4 +1,5 @@
 pub mod bincode_processor;
+pub mod bitcode_processor;
 pub mod borsh_processor;
 pub mod none_processor;
 pub mod rkyv_processor;
@@ -87,6 +88,24 @@ pub fn process_instruction<'a>(
         }
         SolanaSerializationBenchmarkInstruction::UpdateCollectionRkyv => {
             rkyv_processor::update_collection(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::CreateBasicBitcode => {
+            bitcode_processor::create_basic(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::ReadBasicBitcode => {
+            bitcode_processor::read_basic(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::UpdateBasicBitcode => {
+            bitcode_processor::update_basic(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::CreateCollectionBitcode => {
+            bitcode_processor::create_collection(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::ReadCollectionBitcode => {
+            bitcode_processor::read_collection(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::UpdateCollectionBitcode => {
+            bitcode_processor::update_collection(accounts)
         }
     }
 }
