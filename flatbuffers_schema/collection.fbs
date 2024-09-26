@@ -1,0 +1,8 @@
+
+include "state.fbs";
+
+table CollectionTypes {
+    vec_public_key: [PublicKey];
+}
+
+root_type CollectionTypes;

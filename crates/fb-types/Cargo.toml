@@ -1,0 +1,11 @@
+[package]
+  edition = "2021"
+  license-file = "../../LICENSE"
+  name = "fb-types"
+  publish = false
+  readme = "./README.md"
+  version = "0.1.0"
+
+[dependencies]
+flatbuffers = "24.3.25"
+

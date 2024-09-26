@@ -1,0 +1,70 @@
+
+attribute "length";
+
+struct PublicKey {
+  b: [ubyte: 32];
+}
+
+table PublicKeyHolder {
+  key: PublicKey;
+}
+
+table ZeroS {
+    zero: uint8;
+}
+
+table OneS {
+    one: uint16;
+}
+
+table TwoS {
+    two: uint32;
+}
+
+table ThreeS {
+    three: uint64;
+}
+
+table ExampleStruct {
+    unsigned8: uint8;
+    unsigned16: uint16;
+    unsigned32: uint32;
+    unsigned64: uint64;
+    public_key: PublicKey; // Pubkey represented as an array of bytes
+}
+
+enum ExampleEnum: byte {
+    Zero = 0,
+    One = 1,
+    Two = 2,
+    Three = 3,
+    Four = 4,
+    Five = 5,
+    Six = 6,
+    Seven = 7,
+    Eight = 8,
+    Nine = 9
+}
+
+union ExampleVariant {
+    Zero:ZeroS,
+    One:OneS,
+    Two:TwoS,
+    Three:ThreeS,
+    Four:PublicKeyHolder
+}
+
+
+
+
+table PublicKeyMapEntryCollection {
+  map: [PublicKeyMapEntry];
+}
+
+
+table PublicKeyMapEntry {
+    key: PublicKey;  // Key represented as Pubkey
+    value: PublicKey; // Value represented as Pubkey
+}
+
+
