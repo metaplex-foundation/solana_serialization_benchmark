@@ -1,0 +1,28 @@
+include "state.fbs";
+
+table BasicTypes {
+    unsigned8: uint8;
+    unsigned16: uint16;
+    unsigned32: uint32;
+    unsigned64: uint64;
+    public_key: PublicKey; // Pubkey represented as an array of bytes
+    string: string;
+    example_struct: ExampleStruct;
+    example_enum: ExampleEnum;
+    example_variant: ExampleVariant;
+    array8: [uint8] (length: 10);
+    array16: [uint16] (length: 10);
+    array32: [uint32] (length: 10);
+    array64: [uint64] (length: 10);
+    array_public_key: [PublicKey] (length: 10);
+    array_string: [string] (length: 10);
+    array_example_struct: [ExampleStruct] (length: 10);
+    array_example_enum: [ExampleEnum] (length: 10);
+    array_example_variant1: ExampleVariant;
+    array_example_variant2: ExampleVariant;
+    array_example_variant3: ExampleVariant;
+    array_example_variant4: ExampleVariant;
+    array_example_variant5: ExampleVariant;
+}
+
+root_type BasicTypes;

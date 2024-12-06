@@ -2,6 +2,7 @@ pub mod bincode_processor;
 pub mod borsh_processor;
 pub mod none_processor;
 pub mod rkyv_processor;
+pub mod fb_processor;
 
 use borsh::BorshDeserialize;
 use solana_program::{account_info::AccountInfo, entrypoint::ProgramResult, pubkey::Pubkey};
@@ -87,6 +88,24 @@ pub fn process_instruction<'a>(
         }
         SolanaSerializationBenchmarkInstruction::UpdateCollectionRkyv => {
             rkyv_processor::update_collection(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::CreateBasicFB => {
+            fb_processor::create_basic(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::ReadBasicFB => {
+            fb_processor::read_basic(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::UpdateBasicFB => {
+            fb_processor::update_basic(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::CreateCollectionFB => {
+            fb_processor::create_collection(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::ReadCollectionFB => {
+            fb_processor::read_collection(accounts)
+        }
+        SolanaSerializationBenchmarkInstruction::UpdateCollectionFB => {
+            fb_processor::update_collection(accounts)
         }
     }
 }

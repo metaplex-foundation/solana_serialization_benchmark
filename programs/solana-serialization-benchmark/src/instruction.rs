@@ -132,7 +132,35 @@ pub enum SolanaSerializationBenchmarkInstruction {
     #[account(2, name="system_program", desc = "The system program")]
     UpdateCollectionRkyv,
 
-    // For new Serialization libaries, copy and paste the CreateBasicNone, ReadBasicNone, UpdateBasicNone,
-    // CreateCollectionNone, ReadCollectionNone, UpdateCollectionNone instructions here. Replace the "None"
-    // with the name of the serialization library.
+    /// Create an empty account with basic types as a baseline.
+    #[account(0, writable, signer, name="address", desc = "The address of the new account")]
+    #[account(1, writable, signer, name="payer", desc = "The account paying for the storage fees")]
+    #[account(2, name="system_program", desc = "The system program")]
+    CreateBasicFB,
+
+    /// Read an empty account with basic types as a baseline.
+    #[account(0, name="address", desc = "The address of the new account")]
+    ReadBasicFB,
+
+    /// Update an empty account with basic types as a baseline.
+    #[account(0, writable, name="address", desc = "The address of the new account")]
+    #[account(1, writable, signer, name="payer", desc = "The account paying for the storage fees")]
+    #[account(2, name="system_program", desc = "The system program")]
+    UpdateBasicFB,
+
+    /// Create an empty account with collection types as a baseline.
+    #[account(0, writable, signer, name="address", desc = "The address of the new account")]
+    #[account(1, writable, signer, name="payer", desc = "The account paying for the storage fees")]
+    #[account(2, name="system_program", desc = "The system program")]
+    CreateCollectionFB,
+
+    /// Read an empty account with collection types as a baseline.
+    #[account(0, name="address", desc = "The address of the new account")]
+    ReadCollectionFB,
+
+    /// Update an empty account with collection types as a baseline.
+    #[account(0, writable, name="address", desc = "The address of the new account")]
+    #[account(1, writable, signer, name="payer", desc = "The account paying for the storage fees")]
+    #[account(2, name="system_program", desc = "The system program")]
+    UpdateCollectionFB,
 }
