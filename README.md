@@ -2,6 +2,11 @@
 
 Benchmarks for rust serialization frameworks, inspired by https://github.com/djkoloski/rust_serialization_benchmark.
 
+## Versions
+
+- Solana 1.18.22
+- RustC 1.81.0
+
 ## Programs
 
 This project contains the following programs:
